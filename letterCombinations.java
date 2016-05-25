@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by jason on 16/5/24.
  */
-public class letterCombinations {
+public class LetterCombinations {
     private char[][] dic = {{'a','b','c'},{'d','e','f'},{ 'g', 'h', 'i' }, { 'j', 'k', 'l' }, { 'm', 'n', 'o' },
             { 'p', 'q', 'r', 's' }, { 't', 'u', 'v' }, { 'w', 'x', 'y', 'z' }};
     public List<String> letterCombinations(String digits) {
@@ -29,7 +29,8 @@ public class letterCombinations {
     }
     public static void main(String[] args) {
         // write your code here
-        letterCombinations solution = new letterCombinations();
+        LetterCombinations solution = new LetterCombinations();
+        String str = "aa";
         System.out.println(solution.letterCombinations("23"));
     }
 }
