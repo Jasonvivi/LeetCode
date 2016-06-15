@@ -3,47 +3,39 @@ package com.company;
 import com.company.DataStructure.ListNode;
 import com.company.DataStructure.ListNodeOperation;
 
+import java.util.List;
+
 /**
  * Created by jason on 16/6/9.
  */
 public class PartitionList {
     public ListNode partition(ListNode head, int x) {
-        ListNode node = head;
-        ListNode preNode = null;
-        ListNode preBigNode = null;
-        ListNode bigNode = null;
-        while(node != null)
+        ListNode left = new ListNode(0);
+        ListNode right = new ListNode(0);
+        ListNode leftCur = left;
+        ListNode rightCur = right;
+        while(head != null)
         {
-            if(node.val > x)
+            if(head.val < x)
             {
-                bigNode = node;
-                node = node.next;
-            }
-            if(bigNode != null)
-            {
-                if(node.val < x)
-                {
-                    preBigNode.next = node;
-                    node.next = bigNode.next;
-                    preNode.next = bigNode;
-                    bigNode.next = node.next;
-                    node = bigNode;
-                    bigNode = null;
-                }
+                leftCur.next = head;
+                leftCur = head;
             }
             else
             {
-                preBigNode = node;
+                rightCur.next = head;
+                rightCur = head;
             }
-            preNode = node;
-            node = node.next;
+            head = head.next;
         }
-        return head;
+        leftCur.next = right.next;
+        rightCur.next = null;
+        return left.next;
     }
     public static void main(String[] args) {
         // write your code here
         ListNodeOperation listNodeOperation = new ListNodeOperation();
-        ListNode head = listNodeOperation.createListNode(new int[]{1,4,3,2,5,2});
+        ListNode head = listNodeOperation.createListNode(new int[]{1,4,3,5,2});
         PartitionList swapNodesInPairs = new PartitionList();
         listNodeOperation.printListNode(swapNodesInPairs.partition(head,3));
     }
