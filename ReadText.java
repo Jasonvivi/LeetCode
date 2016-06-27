@@ -57,7 +57,7 @@ public class ReadText {
                 }
                 System.out.println("finish");
 
-            }else{
+            }else {
                 System.out.println("找不到指定的文件");
             }
         } catch (Exception e) {
@@ -68,9 +68,11 @@ public class ReadText {
     }
 
     public static void main(String argv[]){
-        String filePath1 = "/Users/jason/Downloads/csimref.txt";
-        String filePath2 =  "/Users/jason/Downloads/csim.txt";
-//      "res/";
-        readTxtFile(filePath1,filePath2);
+//        String filePath1 = "/Users/jason/Downloads/csimref.txt";
+//        String filePath2 =  "/Users/jason/Downloads/csim.txt";
+////      "res/";
+//        readTxtFile(filePath1,filePath2);
+        int x = Integer.MAX_VALUE;
+
     }
 }
