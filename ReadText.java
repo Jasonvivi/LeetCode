@@ -47,7 +47,6 @@ public class ReadText {
                         str2 = str2 + "0";
                 }
                 read.close();
-
                 for(int i = 0; i < str1.length();i++)
                 {
                     if(str1.charAt(i) != str2.charAt(i))
