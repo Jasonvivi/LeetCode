@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by jason on 16/6/16.
+ * Created by jiasen on 16/6/16.
  */
 public class ReadText {
     public static void readTxtFile(String filePath1,String filePath2){
@@ -16,9 +16,9 @@ public class ReadText {
             String str2 = "";
             String encoding="GBK";
             File file=new File(filePath1);
-            if(file.isFile() && file.exists()){ //判断文件是否存在
+            if(file.isFile() && file.exists()){
                 InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file),encoding);//考虑到编码格式
+                        new FileInputStream(file),encoding);
                 BufferedReader bufferedReader = new BufferedReader(read);
                 String lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
@@ -30,11 +30,9 @@ public class ReadText {
                     else
                         str1 = str1 + "0";
                 }
-//                System.out.println(str1);
-
                 file=new File(filePath2);
                 read = new InputStreamReader(
-                        new FileInputStream(file),encoding);//考虑到编码格式
+                        new FileInputStream(file),encoding);
                 bufferedReader = new BufferedReader(read);
                 lineTxt = null;
                 while((lineTxt = bufferedReader.readLine()) != null){
@@ -57,20 +55,19 @@ public class ReadText {
                 System.out.println("finish");
 
             }else {
-                System.out.println("找不到指定的文件");
+                System.out.println("not found the file");
             }
         } catch (Exception e) {
-            System.out.println("读取文件内容出错");
+            System.out.println("read error");
             e.printStackTrace();
         }
 
     }
 
     public static void main(String argv[]){
-//        String filePath1 = "/Users/jason/Downloads/csimref.txt";
-//        String filePath2 =  "/Users/jason/Downloads/csim.txt";
-////      "res/";
-//        readTxtFile(filePath1,filePath2);
+        String filePath1 = "/Users/jason/Downloads/csimref.txt";
+        String filePath2 =  "/Users/jason/Downloads/csim.txt";
+        readTxtFile(filePath1,filePath2);
         int x = Integer.MAX_VALUE;
 
     }
