@@ -29,7 +29,7 @@ public class BalancedBinaryTree {
 
     public boolean isBalanced(TreeNode root)
     {
-        return maxDepth(root) == -1;
+        return maxDepth(root) != -1;
     }
     int maxDepth(TreeNode root)
     {
